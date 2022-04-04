@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header">Notatnik</div>
+    <div id="menu">
+        <button id="buttonB" onclick="format('bold')"><b>B</b></button>
+        <button id="butoonU" onclick="format('underline')"><u>u</u></button>
+        <button id="buttonI" onclick="format('italic')"><i>I</i></button>
+        <select id="czcionka" onmouseout="zmienione = true">
+            <option>Arial</option>
+            <option>Verdana</option>
+            <option>Helvetica</option>
+            <option>Tahoma</option>
+            <option>Georgia</option>
+            <option>Garamond</option>
+        </select>
+        <input id="wielkoscCzcionki" type="number" value="30" onchange="zmienione = true">
+        <input id="kolorCzcionki" type="color" id="color" onchange="zmienione = true">
+        <input type="button" value="Wyrównaj do lewej" onclick="wyrownaj('lewo')">
+        <input type="button" value="Wyrównaj do środka" onclick="wyrownaj('srodek')">
+        <input type="button" value="Wyrównaj do prawej" onclick="wyrownaj('prawo')">
+        <input type="button" value="Clear" onclick="document.getElementById('notatnik').innerHTML = ''; zmienione = true">
+    </div>
+    <div id="notatnik" contenteditable spellcheck="false" onmouseenter="notatnik()">
+    </div>
+    <div id="footer"></div>
+</body>
+<script src="script.js"></script>
+</html>
